@@ -1,0 +1,116 @@
+<hgroup>
+   <h1><a href="/">个人简历生成器</a></h1>
+</hgroup>
+<div id="info-container">
+	<div id="info">
+		<div id="info-filename">
+			<label>文件名</label>
+			<input id="form-filename" value="<%= basicInfo.filename %>" />
+			<span>.json</span>
+		</div>
+		<div id="menu">
+			<ul id="form-tabs">
+				<li name="basic-info"><a href="#/form/basic-info" class="active">基本信息</a></li>
+				<li name="basic-skills"><a href="#/form/basic-skills">基本能力</a></li>
+				<li name="personal-skills"><a href="#/form/personal-skills">个人技能</a></li>
+				<li name="pro-exp"><a href="#/form/pro-exp">项目经历</a></li>
+				<li name="other-skills"><a href="#/form/other-skills">其他技能</a></li>
+			</ul>
+		</div>
+		<div class="form-container">
+			<div class="error-msg"></div>
+			<div id="basic-info" class="form-box">
+				<p>
+					<label>姓名</label>
+					<input id="form-name" value="<%= basicInfo.name %>" />
+				</p>
+				<p>
+					<label>手机</label>
+					<input id="form-mobile" value="<%= basicInfo.mobile %>"/>
+				</p>
+				<p>
+					<label>邮箱</label>
+					<input id="form-email" value="<%= basicInfo.email %>"/>
+				</p>
+				<p>
+					<label>学校</label>
+					<input id="form-school" value="<%= basicInfo.school %>"/>
+				</p>
+				<p>
+					<label>专业</label>
+					<input id="form-major" value="<%= basicInfo.major %>"/>
+				</p>
+				<p>
+					<label>github</label>
+					<input id="form-github" value="<%= basicInfo.github %>"/>
+				</p>
+				<p>
+					<label>博客</label>
+					<input id="form-blog" value="<%= basicInfo.blog %>"/>
+				</p>
+				<p>
+					<label>意向</label>
+					<input id="form-jobApply" value="<%= basicInfo.jobApply %>"/>
+				</p>
+			</div>
+			<div id="basic-skills" class="form-box" style="display:none">
+				<h3>基本技能</h3>
+				<p>这个模块用于填写你的基本技能，比如英语四六级，学习成绩等等。（PS:点击'+'号添加，记得点击保存保存文件。）</p>
+				<div>
+					<input class="form-add-title" placeholder="小标题"/>
+					<input class="form-add-detail" placeholder="详细介绍">
+					<span class="form-add">+</span>
+					<ul>
+					</ul>
+				</div>
+			</div>
+			<div id="personal-skills" class="form-box" style="display:none">
+				<h3>个人能力</h3>
+				<p>这个部分填写你的个人技能，比如会什么技术。（PS:点击'+'号添加，记得点击保存保存文件。）</p>
+				<div>
+					<input class="form-add-title" placeholder="小标题"/>
+					<input class="form-add-detail" placeholder="详细介绍">
+					<span class="form-add">+</span>
+					<ul>
+					</ul>
+				</div>
+			</div>
+			<div id="pro-exp" class="form-box" style="display:none">
+				<h3>项目经历</h3>
+				<p>这个部分填写你的项目经历，个人项目或者实习等等。（PS:点击'+'号添加，记得点击保存保存文件。）</p>
+				<div>
+					<input class="form-add-title" placeholder="小标题"/>
+					<input class="form-add-detail" placeholder="详细介绍">
+					<span class="form-add">+</span>
+					<ul>
+					</ul>
+				</div>
+			</div>
+			<div id="other-skills" class="form-box" style="display:none">
+				<h3>其他</h3>
+				<p>其他方面的技能。（PS:点击'+'号添加，记得点击保存保存文件。）</p>
+				<div>
+					<input class="form-add-title" placeholder="小标题"/>
+					<input class="form-add-detail" placeholder="详细介绍">
+					<span class="form-add">+</span>
+					<ul>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="form-btns">
+		<button id="form-save">
+			<i class="iconfont">&#xe6ca;</i>
+			保存
+		</button>
+		<button id="form-cancel">
+			<i class="iconfont">&#xe6d4;</i>
+			取消
+		</button>
+		<button id="form-delete">
+			<i class="iconfont">&#xe648;</i>
+			删除
+		</button>
+	</div>
+</div>

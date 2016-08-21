@@ -1,0 +1,321 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "iconfont";
+  src: url("iconfont.eot?t=1471358856");
+  /* IE9*/
+  src: url("iconfont.eot?t=1471358856#iefix") format("embedded-opentype"), url("iconfont.woff?t=1471358856") format("woff"), url("iconfont.ttf?t=1471358856") format("truetype"), url("iconfont.svg?t=1471358856#iconfont") format("svg")
+  /* iOS 4.1- */ }
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale; }
+
+/*闄嶇骇浣跨敤rem鍗曚綅
+// 渚嬪瓙锛欯include font-size(14px);
+@function calculateRem($size: 16) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+*/
+/*Clearfix*/
+/*灞呬腑*/
+* {
+  font-family: "Microsoft Yahei", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+body {
+  background-color: #eeeeee; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+hgroup {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  text-align: center; }
+  hgroup a, hgroup h1, hgroup p {
+    color: #00BB9C;
+    display: inline; }
+  hgroup h1 {
+    font-size: 2rem; }
+  hgroup p {
+    font-size: 1rem;
+    padding-left: 1rem; }
+  hgroup a:hover {
+    text-shadow: 0 0 1px gray; }
+  hgroup p a:hover {
+    color: red;
+    text-shadow: 0 0 0px; }
+
+h1 {
+  color: #00BB9C; }
+
+li {
+  list-style: none; }
+
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3rem; }
+
+#main {
+  text-align: center;
+  margin-top: 1rem; }
+  #main p {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto; }
+  #main button {
+    width: 5rem;
+    height: 10rem;
+    margin: 1rem; }
+  #main button a {
+    font-size: 0.9rem;
+    background-color: red; }
+  #main i {
+    font-size: 2rem; }
+  #main button a:hover i {
+    color: #00BB9C; }
+  #main button a div {
+    background-color: #eeeeee;
+    padding-top: 3.3rem;
+    padding-bottom: 3.1rem; }
+  #main button:hover {
+    box-shadow: 0 0 3px #00BB9C; }
+
+#info-container input {
+  padding: 0.2rem; }
+#info-container #info {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  margin-top: 1rem;
+  padding: 1rem;
+  line-height: 2; }
+#info-container #info-filename {
+  text-align: center; }
+  #info-container #info-filename label {
+    margin-right: 1rem; }
+#info-container #menu {
+  font-size: 0; }
+#info-container #form-tabs {
+  margin-top: 1rem;
+  width: 26.35rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -1px; }
+#info-container #form-tabs li {
+  background-color: #eeeeee;
+  display: inline-block;
+  font-size: 1rem; }
+#info-container #form-tabs a {
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem; }
+#info-container .form-container {
+  border: 2px solid #00BB9C;
+  box-shadow: 0 0 1px #00BB9C;
+  padding: 2rem; }
+#info-container #basic-info input {
+  margin-left: 3.5rem;
+  padding: 0.1rem; }
+#info-container #form-github {
+  position: relative;
+  left: -1.15rem; }
+#info-container .form-box span {
+  color: #00BB9C;
+  font-size: 20px;
+  font-weight: 900; }
+#info-container .form-box span:hover {
+  text-shadow: 0 0 3px #00BB9C;
+  cursor: pointer; }
+#info-container .form-box li {
+  list-style: lower-roman inside;
+  border-bottom: 2px solid #00BB9C; }
+#info-container .form-box label {
+  word-break: break-all; }
+#info-container .item-delete {
+  font-size: 18px;
+  color: red; }
+#info-container .item-delete:hover {
+  font-weight: 900;
+  cursor: pointer;
+  text-shadow: 0 0 3px red; }
+#info-container .form-box label p {
+  word-break: break-all;
+  padding-right: 2rem; }
+#info-container .item-cancel,
+#info-container .item-edit {
+  color: #00BB9C;
+  font-size: 18px; }
+#info-container .item-cancel:hover,
+#info-container .item-edit:hover {
+  text-shadow: 0 0 3px #00BB9C;
+  cursor: pointer; }
+#info-container #form-btns {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto; }
+  #info-container #form-btns button {
+    padding: 0.1rem 0.2rem; }
+  #info-container #form-btns button:hover i {
+    color: #00BB9C; }
+  #info-container #form-btns #form-delete:hover i {
+    color: red; }
+#info-container .error-msg {
+  width: 200px;
+  color: #00BB9C;
+  line-height: 1.2;
+  text-shadow: 0 0 1px #00BB9C; }
+
+#list {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto; }
+  #list h3 {
+    text-align: center;
+    margin-top: 1rem; }
+  #list p {
+    text-align: center; }
+  #list i {
+    margin-right: 1rem; }
+  #list ul {
+    box-shadow: 0 0 3px #00BB9C;
+    border: 2px solid #00BB9C;
+    padding: 2rem;
+    margin-top: 1rem; }
+  #list li {
+    margin-left: 3rem; }
+  #list li:hover li {
+    color: #00BB9C; }
+
+#resume-body {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  background-color: white;
+  height: 1386px;
+  box-shadow: 0 0 2px #00BB9C;
+  font-size: 18px;
+  line-height: 1.5; }
+  #resume-body * {
+    word-break: break-all; }
+  #resume-body h1 {
+    text-align: center;
+    color: black;
+    text-shadow: 0 0 1px black;
+    font-weight: 500; }
+  #resume-body i {
+    font-weight: 400;
+    font-size: 25px; }
+  #resume-body li {
+    list-style: disc inside; }
+  #resume-body li b {
+    font-style: italic; }
+  #resume-body #resume-name {
+    width: 300px;
+    height: 150px;
+    border-top: 7px solid black;
+    border-left: 7px solid black;
+    margin-right: 15px;
+    float: left;
+    background-color: #eeeeee;
+    box-shadow: 0 0 5px black;
+    text-align: center;
+    padding-top: 30px; }
+  #resume-body #resume-basic-info {
+    font-size: 16px;
+    box-shadow: 0 0 5px black;
+    padding-top: 25px;
+    padding-left: 20px;
+    border-top: 7px solid black;
+    border-right: 7px solid black;
+    height: 150px;
+    width: 645px;
+    float: left;
+    background-color: #eeeeee; }
+    #resume-body #resume-basic-info ul {
+      display: inline-block;
+      width: 45%; }
+    #resume-body #resume-basic-info li {
+      line-height: 1.5;
+      list-style: none; }
+    #resume-body #resume-basic-info i {
+      font-size: 20px; }
+    #resume-body #resume-basic-info:before, #resume-body #resume-basic-info:after {
+      content: "";
+      display: table; }
+    #resume-body #resume-basic-info:after {
+      clear: both; }
+  #resume-body #resume-left {
+    margin-top: 15px;
+    margin-right: 15px;
+    height: 1216px;
+    width: 472.5px;
+    float: left; }
+    #resume-body #resume-left #resume-basic-skills {
+      border-left: 7px solid black;
+      padding: 30px;
+      background-color: #eeeeee;
+      box-shadow: 0 0 5px black;
+      margin-bottom: 15px; }
+    #resume-body #resume-left #resume-pro-exp {
+      border-left: 7px solid black;
+      border-bottom: 7px solid black;
+      padding: 30px;
+      background-color: #eeeeee;
+      box-shadow: 0 0 5px black;
+      max-height: 1176px; }
+  #resume-body #resume-right {
+    height: 1216px;
+    width: 472.5px;
+    float: left;
+    margin-top: 15px; }
+    #resume-body #resume-right #resume-personal-skills {
+      border-right: 7px solid black;
+      margin-bottom: 15px;
+      padding: 30px;
+      background-color: #eeeeee;
+      box-shadow: 0 0 5px black; }
+    #resume-body #resume-right #resume-other-skills {
+      border-right: 7px solid black;
+      border-bottom: 7px solid black;
+      max-height: 1176px;
+      padding: 30px;
+      background-color: #eeeeee;
+      box-shadow: 0 0 5px black; }
+
+.resume-btns {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px; }
+  .resume-btns button {
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem; }
+
+.active {
+  color: #00BB9C;
+  text-shadow: 0 0 1px #00BB9C; }
+
+body {
+  position: relative;
+  min-height: 97vh; }
+
+footer {
+  position: absolute;
+  bottom: 0rem;
+  width: 100%;
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */

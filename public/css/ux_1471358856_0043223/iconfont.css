@@ -1,0 +1,39 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1471358856'); /* IE9*/
+  src: url('iconfont.eot?t=1471358856#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1471358856') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1471358856') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1471358856#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-github:before { content: "\e764"; }
+.icon-email:before { content: "\e62a"; }
+.icon-phone:before { content: "\e631"; }
+.icon-blog:before { content: "\e638"; }
+.icon-school:before { content: "\e767"; }
+.icon-computer:before { content: "\e658"; }
+.icon-codezhuanhuan:before { content: "\e640"; }
+.icon-business:before { content: "\e646"; }
+.icon-english:before { content: "\e603"; }
+.icon-grade:before { content: "\e617"; }
+.icon-iconfont04:before { content: "\e60a"; }
+.icon-delete:before { content: "\e6a4"; }
+.icon-delete1:before { content: "\e648"; }
+.icon-new:before { content: "\e61d"; }
+.icon-edit:before { content: "\e60b"; }
+.icon-view:before { content: "\e652"; }
+.icon-me:before { content: "\e64d"; }
+.icon-eye:before { content: "\e600"; }
+.icon-file:before { content: "\e6c0"; }
+.icon-save:before { content: "\e6ca"; }
+.icon-cancel:before { content: "\e6d4"; }
+.icon-remove:before { content: "\e7dc"; }

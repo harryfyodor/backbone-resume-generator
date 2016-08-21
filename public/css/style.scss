@@ -1,0 +1,408 @@
+// @import url(http://fonts.googleapis.com/earlyaccess/notosanssc.css);
+$font-stack: "Microsoft Yahei", sans-serif;
+$green-blue: #00BB9C;
+$light-gray: #eeeeee;
+$chrome-gray: #DFDFDF;
+
+// iconfont.cn提供icon图标
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1471358856'); /* IE9*/
+  src: url('iconfont.eot?t=1471358856#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1471358856') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1471358856') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1471358856#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*降级使用rem单位
+// 例子：@include font-size(14px);
+@function calculateRem($size: 16) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+*/
+/*Clearfix*/
+// 例子：@include clearfix();
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/*居中*/
+@mixin middle() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+* {
+  font-family: $font-stack;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $light-gray;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+hgroup {
+  @include middle();
+  margin-top: 1rem;
+  text-align: center;
+  a,h1,p {
+    color: $green-blue;
+    display: inline;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+  a:hover {
+    text-shadow: 0 0 1px gray;
+  }
+  p a:hover {
+    color: red;
+    text-shadow: 0 0 0px;
+  }
+}
+
+h1 {
+  color: $green-blue;
+}
+
+li {
+  list-style: none;
+}
+
+#container {
+  @include middle();
+  padding-bottom: 3rem;
+}
+
+#main {
+  text-align: center;
+  margin-top: 1rem;
+  p {
+    width: 450px;
+    @include middle();
+  }
+  button {
+    width: 5rem;
+    height: 10rem;
+    margin: 1rem;
+  }
+  button a {
+    font-size: 0.9rem;
+    background-color: red;
+  }
+  i {
+    font-size: 2rem;
+  }
+  button a:hover i {
+    color: $green-blue;
+  }
+  button a div {
+    background-color: #eeeeee;
+    padding-top: 3.3rem;
+    padding-bottom: 3.1rem;
+  }
+  button:hover {
+    box-shadow: 0 0 3px $green-blue;
+  }
+}
+
+#info-container {
+  input {
+    padding: 0.2rem;
+  }
+  #info {
+    @include middle();
+    width: 500px; 
+    margin-top: 1rem;
+    padding: 1rem;
+    line-height: 2;
+  }
+  #info-filename {
+    text-align: center;
+    label {
+      margin-right: 1rem;
+    }
+  }
+  #menu {
+    font-size: 0;
+  }
+  #form-tabs {
+    margin-top: 1rem;
+    width: 26.35rem;
+    @include middle();
+    position: relative;
+    top: -1px;
+  }
+  #form-tabs li {
+    background-color: $light-gray;
+    display: inline-block;
+    font-size: 1rem;  
+  }
+  #form-tabs a {
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  }
+  .form-container {
+    border: 2px solid $green-blue;
+    box-shadow: 0 0 1px $green-blue;  
+    padding: 2rem;
+  }
+  #basic-info input {
+    margin-left: 3.5rem;
+    padding: 0.1rem;
+  }
+  #form-github {
+    position: relative;
+    left: -1.15rem;
+  }
+  .form-box span {
+    color: $green-blue;
+    font-size: 20px;
+    font-weight: 900;
+  }
+  .form-box span:hover {
+    text-shadow:0 0 3px $green-blue;  
+    cursor: pointer;
+  }
+  .form-box li {
+    list-style: lower-roman inside;
+    border-bottom: 2px solid $green-blue;
+  }
+  .form-box label {
+    word-break: break-all; 
+  }
+  .item-delete {
+    font-size: 18px;
+    color: red;
+  }
+  .item-delete:hover {
+    font-weight: 900;
+    cursor: pointer;
+    text-shadow:0 0 3px red;
+  }
+  .form-box label p {
+    word-break: break-all;
+    padding-right: 2rem;
+  }
+  .item-cancel,
+  .item-edit {
+    color: $green-blue;
+    font-size: 18px;
+  }
+  .item-cancel:hover,
+  .item-edit:hover {
+    text-shadow:0 0 3px $green-blue;
+    cursor: pointer;
+  }
+  #form-btns {
+    text-align: center;
+    margin-bottom: 2rem;
+    @include middle();
+    button {
+      padding: 0.1rem 0.2rem;
+    }
+    button:hover i{
+      color: $green-blue;
+    }
+    #form-delete:hover i {
+      color:red;
+    }
+  }
+  .error-msg {
+    width: 200px;
+    color: $green-blue;
+    line-height: 1.2;
+    text-shadow: 0 0 1px $green-blue;
+  }
+}
+
+#list {
+  width: 500px;
+  @include middle();
+  h3 {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  p {
+    text-align: center;
+  }
+  i {
+    margin-right: 1rem;
+  }
+  ul {
+    box-shadow: 0 0 3px $green-blue;
+    border: 2px solid $green-blue;
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+  li {
+    margin-left: 3rem;
+  }
+  li:hover li{
+    color: $green-blue;
+  }
+}
+
+$resume-border: 7px solid black;
+
+@mixin resumeStyle() {
+  padding: 30px;
+  background-color: $light-gray;
+  box-shadow: 0 0 5px black;
+}
+
+#resume-body {
+  @include middle();
+  width: 960px;
+  background-color: white;
+  height: 1386px;
+  box-shadow: 0 0 2px $green-blue;
+  font-size: 18px;
+  line-height: 1.5;
+  * {
+    word-break: break-all; 
+  }
+  h1 {
+    text-align: center;
+    color: black;
+    text-shadow: 0 0 1px black;
+    font-weight: 500;
+  }
+  i {
+    font-weight: 400;
+    font-size: 25px;
+  }
+  li {
+    list-style: disc inside;
+  }
+  li b {
+    font-style: italic;
+  }
+  #resume-name {
+    width: 300px;
+    height: 150px;
+    border-top: $resume-border;
+    border-left: $resume-border;
+    margin-right: 15px;
+    float: left;
+    background-color: $light-gray;
+    box-shadow: 0 0 5px black;
+    text-align: center;
+    padding-top: 30px;
+  }
+  #resume-basic-info {
+    font-size: 16px;
+    box-shadow: 0 0 5px black;
+    ul {
+      display: inline-block;
+      width: 45%;
+    }
+    li {
+      line-height: 1.5;
+      list-style: none;
+    }
+    i {
+      font-size: 20px;
+    }
+    padding-top: 25px;
+    padding-left: 20px;
+    border-top: $resume-border;
+    border-right: $resume-border;
+    height: 150px;
+    width: 645px;
+    float: left;
+    background-color: $light-gray;
+    @include clearfix();
+  }
+  #resume-left {
+    margin-top: 15px;
+    margin-right: 15px;
+    height: 1216px;
+    width: 472.5px;
+    float: left;
+    #resume-basic-skills {
+      border-left: $resume-border;
+      @include resumeStyle();
+      margin-bottom: 15px;
+    }
+    #resume-pro-exp {
+      border-left: $resume-border;
+      border-bottom: $resume-border;
+      @include resumeStyle();
+      max-height: 1176px;
+    }
+  }
+  #resume-right {
+    height: 1216px;
+    width: 472.5px;
+    float: left;
+    margin-top: 15px;
+    #resume-personal-skills {
+      border-right: $resume-border;
+      margin-bottom: 15px;
+      @include resumeStyle();
+    }
+    #resume-other-skills {
+      border-right: $resume-border;
+      border-bottom: $resume-border;
+      max-height: 1176px;
+      @include resumeStyle();
+    }
+  }
+}
+
+.resume-btns {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  button {
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  }
+}
+
+.active {
+  color: $green-blue;
+  text-shadow: 0 0 1px $green-blue;
+}
+
+body {
+  position: relative;
+  min-height: 97vh;
+}
+
+footer {
+  position: absolute;
+  bottom: 0rem;
+  width: 100%;
+  text-align: center;
+}

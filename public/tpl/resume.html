@@ -1,0 +1,106 @@
+
+<div>
+	<div id="resume-body">
+		<div id="resume-name">
+			<h1>
+				<%= basicInfo.name %>
+			</h1>
+			<p><%= basicInfo.jobApply %></p>
+		</div>
+		<div id="resume-basic-info">
+			<ul>
+				<li>
+					<i class="iconfont">
+						&#xe767;
+					</i>
+					<%= basicInfo.school %>
+				</li>
+				<li>
+					<i class="iconfont">
+						&#xe658;
+					</i>
+					<%= basicInfo.major %>
+				</li>
+				<li>
+					<i class="iconfont">
+						&#xe631;
+					</i>
+					<%= basicInfo.mobile %>
+				</li>
+			</ul>	
+			<ul>
+				<li>
+					<i class="iconfont">
+						&#xe62a;
+					</i>
+					<%= basicInfo.email %>
+				</li>
+				<li>
+					<i class="iconfont">
+						&#xe638;
+					</i>
+					<%= basicInfo.blog %>
+				</li>
+				<li>
+					<i class="iconfont">
+						&#xe764;
+					</i>
+					<%= basicInfo.github %>
+				</li>
+			</ul>
+		</div>
+		<div id="resume-left">
+			<div id="resume-basic-skills">
+				<h2>
+					<i class="iconfont">&#xe603;</i>
+					基本能力
+				</h2>
+				<ul>
+					<% _.each(basicSkills, function(b, index) { %>
+						<li><b><%= b.title %></b><p><%= b.item %></p></li>		
+					<% }) %>
+				</ul>
+			</div>
+			<div id="resume-pro-exp">
+				<h2>
+					<i class="iconfont">&#xe646;</i>
+					项目经历
+				</h2>
+				<ul>
+					<% _.each(personalSkills, function(b, index) { %>
+						<li><b><%= b.title %></b><p><%= b.item %></p></li>		
+					<% }) %>
+				</ul>
+			</div>
+		</div>
+		<div id="resume-right">
+			<div id="resume-personal-skills">
+				<h2>
+					<i class="iconfont">&#xe640;</i>
+					个人技术
+				</h2>
+				<ul>
+					<% _.each(proExp, function(b, index) { %>
+						<li><b><%= b.title %></b><p><%= b.item %></p></li>		
+					<% }) %>
+				</ul>
+			</div>
+			<div id="resume-other-skills">
+				<h2>
+					<i class="iconfont">&#xe617;</i>
+					其他技术
+				</h2>
+				<ul>
+					<% _.each(otherSkills, function(b, index) { %>
+						<li><b><%= b.title %></b><p><%= b.item %></p></li>			
+					<% }) %>
+				</ul>
+			</div>			
+		</div>
+	</div>
+	<div class="resume-btns">
+		<button class="resume-print">打印</button>
+		<button class="resume-html">生成html</button>
+	</div>
+	<script type="text/javascript" src="./js/position.js"></script>
+</div>
