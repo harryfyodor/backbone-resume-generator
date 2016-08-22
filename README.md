@@ -3,12 +3,16 @@
 > 个人简历生成器。通过浏览器界面来操作本地数据，展现数据。
 
 ### 最终简历的`demo`如下
+
 主页
 ![home](./pictures/home.JPG)
+
 填写内容
 ![form](./pictures/form.JPG)
+
 填写内容（类似todos）
 ![form](./pictures/form2.JPG)
+
 简历样例
 ![resume](./pictures/resume.png)
 
