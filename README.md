@@ -4,15 +4,6 @@
 
 ### 最终简历的demo如下
 
-#####主页<br />
-![home](./pictures/home.JPG)
-
-#####填写内容<br />
-![form](./pictures/form.JPG)
-
-#####填写内容（类似todos）<br />
-![form](./pictures/form2.JPG)
-
 #####简历样例<br />
 ![resume](./pictures/resume.png)
 
