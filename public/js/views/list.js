@@ -22,11 +22,9 @@ var listView = Backbone.View.extend({
 			timeout: 500,
 			success: function(data) {
 				that.list = data;
-				that.msg = "";
 				that.render();
 			},
 			error: function(xhr, type) {
-				that.msg = "EMPTY";
 				that.render();
 			}
 		});
@@ -65,7 +63,6 @@ var listView = Backbone.View.extend({
 			});
 			*/
 			$.get('/api/getFile/' + filename, function(data) {
-				console.log("old", data)
 				var json = JSON.parse(data);
 				var model = new mainModel(json);
 				// 设置model里面的内嵌collection
@@ -86,11 +83,12 @@ var listView = Backbone.View.extend({
 			$.get('/api/getFile/' + filename, function(data) {
 				var json = JSON.parse(data);
 				var model = new mainModel(json);
-				console.log(model)
 				var view = new resumeView({
 					model: model
 				});
 				that.$container.html(view.render().el);
+				// 调用view的函数，计算好所需要的尺寸。
+				view.adapt();
 			});
 		}
 	}

@@ -1,7 +1,7 @@
 
 <div>
-	<div id="resume-body">
-		<div id="resume-name">
+	<div id="resume-body" style="line-height:2">
+		<div id="resume-name" style="line-height:1">
 			<h1>
 				<%= basicInfo.name %>
 			</h1>
@@ -67,7 +67,7 @@
 					项目经历
 				</h2>
 				<ul>
-					<% _.each(personalSkills, function(b, index) { %>
+					<% _.each(proExp, function(b, index) { %>
 						<li><b><%= b.title %></b><p><%= b.item %></p></li>		
 					<% }) %>
 				</ul>
@@ -80,7 +80,7 @@
 					个人技术
 				</h2>
 				<ul>
-					<% _.each(proExp, function(b, index) { %>
+					<% _.each(personalSkills, function(b, index) { %>
 						<li><b><%= b.title %></b><p><%= b.item %></p></li>		
 					<% }) %>
 				</ul>
@@ -95,12 +95,32 @@
 						<li><b><%= b.title %></b><p><%= b.item %></p></li>			
 					<% }) %>
 				</ul>
-			</div>			
+			</div>		
 		</div>
+		<div id="resume-note" style="line-height:2">
+			<b>
+				<i class="iconfont">&#xe60b;</i>
+				简历介绍
+			</b>
+			<p>这个简历是自动生成的。简历生成器以backbone + underscore + jquery + webpack 为前端，express为后端，能够在浏览器界面预览编辑简历，也可以生成html或打印成pdf。</p>
+		</div>	
 	</div>
 	<div class="resume-btns">
 		<button class="resume-print">打印</button>
 		<button class="resume-html">生成html</button>
+		<label>行距:</label>
+		<select placeholder="行距">
+		  <option value="1.5">1.5</option>
+		  <option value="1.6">1.6</option>
+		  <option value="1.7">1.7</option>
+		  <option value="1.8">1.8</option>
+		  <option value="1.9">1.9</option>
+		  <option value="2.0" selected="selected">2.0</option>
+		  <option value="2.1">2.1</option>
+		  <option value="2.2">2.2</option>
+		  <option value="2.3">2.3</option>
+		  <option value="2.4">2.4</option>
+		  <option value="2.5">2.5</option>
+		</select>
 	</div>
-	<script type="text/javascript" src="./js/position.js"></script>
 </div>

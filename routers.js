@@ -46,7 +46,7 @@ function removeFile(req, res) {
 // 生成html
 function generateHTML(req, res) {
 	var header = '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>简历</title><link rel="stylesheet" type="text/css" href="./style.css"></head><body><div id="container">';
-	var footer = '</div><script type="text/javascript" src="./position.js"></script></body></html>';
+	var footer = '</div><footer>Copyright © 2016 harryfyodor. All Rights Reserved.</footer></body></html>';
 	var filename = req.body.filename;
 	var html = header + req.body.html + footer;
 	fs.writeFile('./output/' + filename + '.html', html ,function(err) {

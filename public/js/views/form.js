@@ -30,7 +30,6 @@ var formView = Backbone.View.extend({
 	},
 
 	saveResume: function() {
-		console.log(this.model)
 		this.model.set({
 			basicInfo:{
 				filename: $('#form-filename').val().trim(),
@@ -45,7 +44,6 @@ var formView = Backbone.View.extend({
 			}
 		});
 		$('.error-msg').html('');
-		console.log(this.model.attributes.basicInfo);
 		// 如果基本信息是空的
 		if(!_.isEqual(utils.showErrors(this.model.attributes.basicInfo), {})) {
 			var msg = "";
@@ -74,8 +72,6 @@ var formView = Backbone.View.extend({
 			return;
 		}
 		var filename = this.model.attributes.basicInfo.filename;
-		console.log(this.model)
-		console.log("filename", filename);
 		if(confirm("确定要删除这一份简历？")) {
 			$.ajax({
 				url: "/api/removeFile/" + filename,

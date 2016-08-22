@@ -11,7 +11,6 @@ var itemView = Backbone.View.extend({
 	},
 
 	initialize: function() {
-
 		this.listenTo(this.model, "change", this.render);
 		this.listenTo(this.model, "destroy", this.remove);
 		this.render();
@@ -28,6 +27,7 @@ var itemView = Backbone.View.extend({
 	edit: function(e) {
 		$(this.el).find("label").hide();
 		$(this.el).find("input").show();
+		$(this.el).find("textarea").show();
 		$(this.el).find("input")[0].focus();
 		$(this.el).find(".item-delete").hide();
 		$(this.el).find(".item-edit").hide();
@@ -36,7 +36,6 @@ var itemView = Backbone.View.extend({
 	},
 
 	press: function(e) {
-		console.log(this.$inputDetail, this.$inputTitle)
 		var titleValue = this.$inputTitle.val().trim();
 		var detailValue = this.$inputDetail.val().trim();
 		if(titleValue && detailValue) {
@@ -61,6 +60,7 @@ var itemView = Backbone.View.extend({
 	close: function(e) {
 		$(this.el).find('label').show();
 		$(this.el).find("input").hide();
+		$(this.el).find("textarea").hide();
 		$(this.el).find(".item-ensure").hide();
 		$(this.el).find(".item-cancel").hide();
 		$(this.el).find(".item-delete").show();

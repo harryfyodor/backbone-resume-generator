@@ -1,3 +1,4 @@
+@charset 'utf-8';
 // @import url(http://fonts.googleapis.com/earlyaccess/notosanssc.css);
 $font-stack: "Microsoft Yahei", sans-serif;
 $green-blue: #00BB9C;
@@ -137,6 +138,12 @@ li {
   }
 }
 
+@mixin textareaStyle() {
+  width: 60%;
+  padding: 0.2rem;
+  height: 4rem;
+}
+
 #info-container {
   input {
     padding: 0.2rem;
@@ -176,6 +183,12 @@ li {
     border: 2px solid $green-blue;
     box-shadow: 0 0 1px $green-blue;  
     padding: 2rem;
+  }
+  .form-add-title {
+    width: 60%;
+  }
+  .form-add-detail {
+    @include textareaStyle();
   }
   #basic-info input {
     margin-left: 3.5rem;
@@ -223,6 +236,9 @@ li {
   .item-edit:hover {
     text-shadow:0 0 3px $green-blue;
     cursor: pointer;
+  }
+  .item-detail {
+    @include textareaStyle();
   }
   #form-btns {
     text-align: center;
@@ -289,6 +305,7 @@ $resume-border: 7px solid black;
   box-shadow: 0 0 2px $green-blue;
   font-size: 18px;
   line-height: 1.5;
+  position: relative;
   * {
     word-break: break-all; 
   }
@@ -297,6 +314,7 @@ $resume-border: 7px solid black;
     color: black;
     text-shadow: 0 0 1px black;
     font-weight: 500;
+    line-height: 60px;
   }
   i {
     font-weight: 400;
@@ -306,7 +324,7 @@ $resume-border: 7px solid black;
     list-style: disc inside;
   }
   li b {
-    font-style: italic;
+    
   }
   #resume-name {
     width: 300px;
@@ -347,7 +365,7 @@ $resume-border: 7px solid black;
   #resume-left {
     margin-top: 15px;
     margin-right: 15px;
-    height: 1216px;
+    height: 1051px;
     width: 472.5px;
     float: left;
     #resume-basic-skills {
@@ -357,13 +375,13 @@ $resume-border: 7px solid black;
     }
     #resume-pro-exp {
       border-left: $resume-border;
-      border-bottom: $resume-border;
       @include resumeStyle();
       max-height: 1176px;
     }
+    @include clearfix();
   }
   #resume-right {
-    height: 1216px;
+    height: 1051px;
     width: 472.5px;
     float: left;
     margin-top: 15px;
@@ -374,10 +392,22 @@ $resume-border: 7px solid black;
     }
     #resume-other-skills {
       border-right: $resume-border;
-      border-bottom: $resume-border;
       max-height: 1176px;
       @include resumeStyle();
     }
+    @include clearfix();
+  }
+  #resume-note {
+    height: 150px;
+    width: 960px;
+    position: absolute;
+    bottom: 0;
+    @include resumeStyle();
+    border-bottom: $resume-border;
+    border-left: $resume-border;
+    border-right: $resume-border;
+    font-size: 14px;
+    padding-top: 15px;
   }
 }
 
@@ -387,6 +417,10 @@ $resume-border: 7px solid black;
   margin-bottom: 15px;
   button {
     padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  }
+  select {
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    width: 80px;
   }
 }
 

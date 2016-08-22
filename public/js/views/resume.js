@@ -2,7 +2,8 @@ var resumeView = Backbone.View.extend({
 
 	events: {
 		'click .resume-print': 'print',
-		'click .resume-html': 'html'
+		'click .resume-html': 'html',
+		'click select':'lineHightChange'
 	},
 
 	initialize: function() {
@@ -11,7 +12,6 @@ var resumeView = Backbone.View.extend({
 
 	render: function() {
 		if(this.model) {
-			console.log(this.model.attributes.basicInfo)
 			$(this.el).html(this.template(this.model.attributes));
 		}
 		return this;
@@ -38,9 +38,30 @@ var resumeView = Backbone.View.extend({
 					alert("成功生成html！可以查看根目录的output文件夹~");
 				},
 				error: function() {
+					console.log("Fail to generate!")
 				}
 			});
 		}
+	},
+
+	lineHightChange: function(e) {
+		$('#resume-body').css("line-height", $('select').val())
+		this.adapt();
+	},
+
+	// 这段代码从
+	adapt: function() {
+		var left1 = $(this.el).find('#resume-basic-skills').get(0).offsetHeight;
+		var right1 = $(this.el).find('#resume-personal-skills').get(0).offsetHeight;
+		var left = $(this.el).find('#resume-left').get(0).offsetHeight;
+		var right = $(this.el).find('#resume-right').get(0).offsetHeight;
+		var left2 = left - left1;
+		var right2 = right - right1;
+		var leftBottomElement = $(this.el).find('#resume-pro-exp');
+		var rightBottomElemnt = $(this.el).find('#resume-other-skills');
+
+		leftBottomElement.css('height', left2 - 10 + 'px');
+		rightBottomElemnt.css('height', right2 - 10 + 'px');
 	}
 });
 
