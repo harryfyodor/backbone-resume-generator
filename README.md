@@ -4,10 +4,11 @@
 
 ### 最终简历的`demo`如下
 主页
-![home](./pictures/home.jpg)
-填写
-![form](./pictures/form.jpg)
-![form](./pictures/form2.jpg)
+![home](./pictures/home.JPG)
+填写内容
+![form](./pictures/form.JPG)
+填写内容（类似todos）
+![form](./pictures/form2.JPG)
 简历样例
 ![resume](./pictures/resume.png)
 
