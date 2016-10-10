@@ -30,6 +30,7 @@ var formView = Backbone.View.extend({
 	},
 
 	saveResume: function() {
+		console.log(this.model)
 		this.model.set({
 			basicInfo:{
 				filename: $('#form-filename').val().trim(),
@@ -112,6 +113,7 @@ var formView = Backbone.View.extend({
 	},
 
 	addOne: function(item) {
+		console.log(item)
 		var form = $('.form-box').filter(function(index) {
 				return $(this).css("display") !== "none";
 			});
@@ -125,19 +127,36 @@ var formView = Backbone.View.extend({
 		list.append(view.render().el);
 	},
 
+	updateOne: function() {
+		console.log(this.model)
+	},
+
+	// todos 先把model清空，然后调用这里的addItem添加，这样才会有事件
+
 	addAll: function() {
+
 		var cols = ["basic-skills", "personal-skills", "pro-exp", "other-skills"];
 		var that = this;
+
 		_.each(cols, function(col, index) {
-			_.each(that.model[that.transform(col)].models, function(item, index) {
-				// var i = item.attributes.item;
+			var colName = that.transform(col);
+			var len = that.model[colName].models.length;
+
+			var list = that.$el.find('#' + col).find('ul');
+			for (var i = 0; i < len; i++) {
+				var model = that.model[colName].models.shift();
+				// console.log(model)
+				that.model[colName].add({
+					title: model.attributes.title,
+					item: model.attributes.item
+				}, {silent: true});
+				// console.log(that.model[colName].models[len - 1])
 				var view = new itemView({ 
-					model: new itemModel(item.attributes),
-					collection: that.model[that.transform(col)]
+					model: that.model[colName].models[len - 1],
+					collection: that.model[colName]
 				});
-				// 不能直接用$
-				$(that.el).find("#" + col).find("ul").append(view.render().el);
-			});
+				list.append(view.render().el);
+			}
 		});
 	}
 });

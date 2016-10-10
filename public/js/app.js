@@ -45,6 +45,7 @@ var AppRouter = Backbone.Router.extend({
 	edit: function(file, mode) {
 		// ajax get json file
 		// this.mainModel = 
+		console.log(234)
 		var view = new formView();
 		this.$container.html(view.render().el);
 	},
